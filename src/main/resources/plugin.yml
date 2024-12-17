@@ -1,0 +1,104 @@
+name: DeluxeChat
+main: me.clip.deluxechat.DeluxeChat
+version: 1.16.2
+api-version: 1.13
+author: extended_clip
+description: Deluxe chat formatting system
+softdepend: [BanManager, Essentials, PlaceholderAPI, Towny, TownyChat, Vault, mcMMO]
+permissions:
+  deluxechat.*:
+    description: ability to use all commands
+    children:
+      deluxechat.admin: true
+  deluxechat.admin:
+    description: ability to use all commands
+    children:
+      deluxechat.color: true
+      deluxechat.formatting: true
+      deluxechat.utf: true
+      deluxechat.filter.bypass: true
+      deluxechat.vanish.bypass: true
+      deluxechat.url: true
+      deluxechat.bungee.chat: true
+      deluxechat.bungee.toggle: true
+      deluxechat.bungee.override: true
+      deluxechat.pm: true
+      deluxechat.pm.color: true
+      deluxechat.pm.formatting: true
+      deluxechat.pm.url: true
+      deluxechat.pm.toggle: true
+      deluxechat.pm.ignoretoggle: true
+      deluxechat.socialspy: true
+  deluxechat.color:
+    description: ability to use color codes in chat
+    default: op
+  deluxechat.formatting:
+    description: ability to use formatting codes in chat
+    default: op
+  deluxechat.utf:
+    description: ability to use special utf characters in chat
+    default: op
+  deluxechat.filter.bypass:
+    description: ability to bypass the chat filter if enabled
+    default: op
+  deluxechat.vanish.bypass:
+    description: ability to bypass sending messages to vanished players
+    default: op
+  deluxechat.ignore.bypass:
+    description: ability to bypass sending messages to ignored players
+    default: op
+  deluxechat.url:
+    description: ability to send clickable links in chat
+    default: op
+  deluxechat.bungee.chat:
+    description: ability to chat globally if bungee is enabled
+    default: op
+  deluxechat.bungee.toggle:
+    description: ability to toggle chatting globally if bungee is enabled
+    default: op
+  deluxechat.bungee.override:
+    description: always send to all players when in global chat even if player is in server only chat
+    default: op
+  deluxechat.pm:
+    description: ability to send private messages with /msg or /reply
+    default: op
+  deluxechat.pm.color:
+    description: ability to use color codes in private messages
+    default: op
+  deluxechat.pm.formatting:
+    description: ability to use formatting codes in private messages
+    default: op
+  deluxechat.pm.url:
+    description: ability to send url links in private message
+    default: op
+  deluxechat.pm.toggle:
+    description: ability to toggle private messages on or off with /msgtoggle
+    default: op
+  deluxechat.pm.ignoretoggle:
+    description: ability to send private messages to any player regardless if they have pm toggled off or not
+    default: op
+  deluxechat.socialspy:
+    description: ability to spy on private messages
+    default: op
+  deluxechat.socialspy.onjoin:
+    description: will toggle socialspy on when the player joins
+    default: op
+commands:
+  dchat:
+    description: Chat utility command
+    aliases: [deluxechat]
+  gtoggle:
+    description: Toggle global/bungeecord chat on/off
+    aliases: [globaltoggle]
+  msgtoggle:
+    description: Toggle receiving private messages on/off
+    aliases: [mtoggle, pmtoggle]
+  msg:
+    description: Send a player a private message
+    aliases: [message, pm, tell, whisper, w, t, m]
+  reply:
+    description: reply to a private message
+    aliases: [r]
+  socialspy:
+    description: spy on private messages
+    aliases: [deluxesocialspy]
